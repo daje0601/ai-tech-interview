@@ -119,7 +119,7 @@
 
 Loss function을 정의할 때 두 가지 중요한 가정이 있는데 
 1) Loss function 총 합은 각 샘플들의 loss의 총합과 같다.
-2) Loss function을 구할 때는 network의 출력값과 정답을 사용하여 구한다. 
+2) Loss function을 구할 때는 network의 출력값과 정답을 사용하여 구한다.
 
 > **activation function**
 
@@ -140,6 +140,12 @@ Loss function을 정의할 때 두 가지 중요한 가정이 있는데
 - [5. 결과 값을 비교하는 방식(Cost function) - 대소니](https://daeson.tistory.com/166)
 - [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113)
 - [활성화 함수(activation function)을 사용하는 이유 - 프라이데이](https://ganghee-lee.tistory.com/30)
+
+#### step과 epoch이 무엇인가요?
+
+우리가 학습 시키는 데이터의 양이 워낙 많기 때문에 모든 데이터에 대한 loss를 한번에 구할 수 없어서 샘플(배치) 단위로 나누어서 가중치와 편향을 가중치와 편향을 업데이트하게 됩니다. 
+이때 배치 단위로 가중치가 업데이트 되는 것을 우리는 step이라고 이야기하고, 전체 학습 데이터셋을 한 번 모델에 통과시키는 것을 epoch이라고 한다. 
+
 
 ---
 
@@ -1300,3 +1306,6 @@ Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 �
 Pytorch를 기준으로 볼 때 `something.to('cuda')`로 변환하는 모든 것들을 생각해보면 된다. 보통 GPU로 올리는 것은 모델과 데이터셋이므로, <strong>(모델의 크기 + 데이터의 크기 × 배치 크기)</strong>로 학습시 필요한 메모리 크기를 계산할 수 있다.
 
 ---
+
+
+
