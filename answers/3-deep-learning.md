@@ -99,15 +99,27 @@
 
 ## #2
 
-#### Cost Function과 Activation Function은 무엇인가요?
+#### Lost Function과 Activation Function은 무엇인가요?
 
 > **cost function**
 
-모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.
+손실 함수(loss function)은 모델의 예측 결과와 실제 값 사이의 차이를 계산하는 함수입니다. 
 
-이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.
+주로 지도 학습에서 사용되며, 모델이 학습 중에 최적의 매개변수를 찾기 위해 손실을 최소화하도록 도와줍니다.
 
-**cost function** 을 최소화함으로써 모델을 적절한 표현력을 갖추도록 학습시킬 수 있다.
+손실 함수는 모델이 얼마나 잘 작동하는지를 측정하는 지표로 사용됩니다. 
+
+예측과 실제 값 사이의 차이가 작을수록 손실 값은 낮아지며, 이는 모델의 성능이 더 우수하다는 것을 의미합니다.
+
+손실 함수는 다양한 유형이 있으며, 작업의 종류에 따라 선택됩니다. 일부 손실 함수는 회귀 문제에서 사용되고, 다른 손실 함수는 분류 문제에서 사용됩니다. 
+
+회귀 문제에서는 평균 제곱 오차(Mean Squared Error, MSE)나 평균 절대 오차(Mean Absolute Error, MAE)와 같은 손실 함수가 일반적으로 사용됩니다. 
+
+분류 문제에서는 크로스 엔트로피 손실(Cross Entropy Loss)이 자주 사용됩니다.
+
+Loss function을 정의할 때 두 가지 중요한 가정이 있는데 
+1) Loss function 총 합은 각 샘플들의 loss의 총합과 같다.
+2) Loss function을 구할 때는 network의 출력값과 정답을 사용하여 구한다. 
 
 > **activation function**
 
